@@ -1,0 +1,18 @@
+set timeout 100
+spawn telnet ptt.cc
+match_max 1000
+expect "new"
+send "ID\r\n"
+sleep 1
+send "PASSWORD\r"
+sleep 3
+send "\r\n"
+sleep 1
+send "g"
+sleep 1
+send "\r"
+sleep 1
+send "y"
+sleep 1
+send "\r"
+interact timeout 1 { send "\n" }
